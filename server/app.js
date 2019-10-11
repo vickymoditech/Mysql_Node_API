@@ -25,13 +25,13 @@ function startServer() {
     app.angularFullstack = server.listen(config.port, config.ip, function () {
         let message = 'Express server listening on ' + config.port + ', in ' + app.get('env') + ' mode';
         console.log(message);
-           GygLog.logInit();
+        GygLog.logInit();
         GygLog.writeLog(GygLog.eLogLevel.debug, null, message);
     });
 }
 
 sqldb.sequelize.sync()
-    //.then(seedDatabaseIfNeeded)
+//.then(seedDatabaseIfNeeded)
     .then(startServer)
     .catch(err => {
         console.log('Server failed to start due to error: %s', err);

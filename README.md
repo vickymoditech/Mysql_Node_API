@@ -75,5 +75,46 @@ return User.findAll({
 ```
 
 
+- JOI Validation 
+
+```
+
+addStore: {
+        body: {
+            days_hours_base: Joi.object({
+                service_availability: Joi.array().items(service).required(),
+                subtitle: Joi.string().required(),
+            }).required(),
+            uuid: Joi.string().uuid().required(),
+            name: Joi.string().required(),
+            has_breakfast: Joi.boolean().required(),
+            state: Joi.string().required(),
+            menu_id: Joi.string().required(),
+        }
+    },
+
+```
+
+- service
+
+```
+
+let service = Joi.object().keys({
+    enabled: Joi.boolean().required(),
+    time_periods: Joi.array().items(timePeriode).required(),
+    day_of_week: Joi.string().required()
+});
+
+let timePeriode = Joi.object().keys({
+    start_time: Joi.string().required(),
+    end_time: Joi.string().required()
+});
+
+```
+
+
+
+
+
 
 
