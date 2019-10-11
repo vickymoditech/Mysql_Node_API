@@ -37,7 +37,7 @@
         "morgan": "^1.9.0",
         "mysql": "^2.17.1",
         "node-cache": "^4.2.0",
-        "sequelize": "^3.23.6",
+        "sequelize": "^5.3.0",
         "serve-favicon": "^2.3.0",
         "simple-node-logger": "^18.12.23",
         "sqlite3": "~4.0.1",
